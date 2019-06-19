@@ -1,0 +1,20 @@
+{
+  "name": "solve-expression-node",
+  "version": "1.0.0",
+  "description": "solve mathematical expressions ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abdul-Az/solve-expression-node.git"
+  },
+  "author": "Abdul Azeez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abdul-Az/solve-expression-node/issues"
+  },
+  "homepage": "https://github.com/Abdul-Az/solve-expression-node#readme"
+}
