@@ -30,10 +30,10 @@ const operator = (op) => {
     console.log('wrong operator')
 }
 //Print Step 1
-console.log(  `(${lhs_rhs_lhs} ${lhs_rhs_lhs}) ${rhs} ${lhs_lhs} ${operator(lhs_op)} ${operator(lhs_rhs_op)} ${operator(equal_op)}`  )
+console.log(  `(${lhs_rhs_lhs} ${lhs_rhs_rhs}) ${rhs} ${lhs_lhs} ${operator(lhs_op)} ${operator(lhs_rhs_op)} ${operator(equal_op)}`  )
 
 //Step 2
-let other_numbers = [ lhs_rhs_lhs, lhs_rhs_lhs, lhs_lhs]
+let other_numbers = [ lhs_rhs_lhs, lhs_rhs_rhs, lhs_lhs]
 
 //find x
 let x = []
@@ -43,12 +43,12 @@ const find_x_in_other_numbers = (arr_of_other_numbers) => {
             x.push('-x')
             arr_of_other_numbers.pop()
             return arr_of_other_numbers
-        }
+        } else
        if(arr_of_other_numbers[0] === 'x'){
            x.push('1/x')
            arr_of_other_numbers.shift()
            return arr_of_other_numbers
-       } 
+       } else
        if(arr_of_other_numbers[1] === 'x'){
            x.push('1/x')
            arr_of_other_numbers.splice(1)
@@ -58,5 +58,36 @@ const find_x_in_other_numbers = (arr_of_other_numbers) => {
  
 }
 
-find_x_in_other_numbers(other_numbers)
+let only_numbers = find_x_in_other_numbers(other_numbers)
 console.log(x)
+
+
+if(parseInt(rhs) > 0){
+    rhs = `-${rhs}`
+} else if(parseInt(rhs) < 0){
+    rhs = `+${rhs}`
+}
+only_numbers.push(rhs)
+
+console.log(only_numbers)
+
+//Step 3(bonus)
+
+
+let sum = []
+if(only_numbers[1] < 0){
+    let sub =   parseInt(only_numbers[2])  -  only_numbers[1]
+      sum.push(sub)
+
+} else if (only_numbers[1] > 0){
+  let add =   parseInt(only_numbers[2])  +  only_numbers[1]
+     sum.push(add)
+}
+
+console.log(sum)
+
+let first = only_numbers.shift()
+
+
+
+//  console.log(only_numbers[1])
